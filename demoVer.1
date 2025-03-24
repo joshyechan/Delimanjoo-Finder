@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 지도</title>
+    <style>
+        /* 지도 스타일 */
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* 고정된 텍스트 스타일 */
+        .fixed-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        /* 지도와 UI가 겹치지 않도록 padding 처리 */
+        .container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 지도 표시 영역 -->
+        <div id="map"></div>
+
+        <!-- 지도 위에 고정되는 텍스트 -->
+        <div class="fixed-label">여기에 고정된 텍스트</div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+    <script>
+        // Google Maps 초기화 함수
+        function initMap() {
+            // 지도 초기 설정
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 37.5665, lng: 126.9780 }, // 서울의 좌표
+                zoom: 12,
+                mapTypeId: 'roadmap'
+            });
+
+            // 줌 인/줌 아웃 이벤트 핸들링 (필요시 추가적인 로직)
+            map.addListener('zoom_changed', function() {
+                console.log('현재 줌 레벨:', map.getZoom());
+            });
+        }
+    </script>
+</body>
+</html>
