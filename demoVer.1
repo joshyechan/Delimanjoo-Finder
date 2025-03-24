@@ -1,57 +1,50 @@
-<!DOCTYPE html>
+<!DOCSTYLE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>반응형 지도</title>
+    <meta charset="UTF-8"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <title>델리만쥬 설명 페이지</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/poposnail61/min-sans@main/web/css/minsans-dynamic-subset.css">
+
     <style>
-        #map {
-            height: 100vh;
-            width: 100%;
+        body {
+            
+            font-family: 'Min Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
         }
-
-        .fixed-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            z-index: 10;
-        }
-
         .container {
-            position: relative;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgb(246, 240, 234);
+            border-radius: 10px;
+        }
+        .image{
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            text-align: left;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
+    <h1>델리만쥬</h1>
     <div class="container">
-        <!-- 지도 표시 영역 -->
-        <div id="map"></div>
-
-        <!-- 지도 위에 고정되는 텍스트 -->
-        <div class="fixed-label">여기에 고정된 텍스트</div>
+        <img src="https://blog.kakaocdn.net/dn/yFuda/btrVF9tzbgo/Lu6s0cKHDzSjFBNtEl0LH0/img.jpg">
+        <p class="description">
+            델리만쥬는 최고의 간식입니다.
+        </p>
     </div>
 
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
-    <script>
-        // Google Maps 초기화 함수
-        function initMap() {
-            // 지도 초기 설정
-            const map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 37.5665, lng: 126.9780 }, // 서울의 좌표
-                zoom: 12,
-                mapTypeId: 'roadmap'
-            });
-
-            // 줌 인/줌 아웃 이벤트 핸들링 (필요시 추가적인 로직)
-            map.addListener('zoom_changed', function() {
-                console.log('현재 줌 레벨:', map.getZoom());
-            });
-        }
-    </script>
+</p>델리만쥬는 최고의 간식입니다.</p>
 </body>
 </html>
