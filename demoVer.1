@@ -28,10 +28,10 @@
 </head>
 <body>
     <div class="container">
-        <!-- 지도 표시 영역 -->
+        <!-- d  -->
         <div id="map"></div>
 
-        <!-- 지도 위에 고정되는 텍스트 -->
+        <!-- ddd -->
         <div class="fixed-label">여기에 고정된 텍스트</div>
     </div>
 
@@ -39,14 +39,14 @@
     <script>
         // Google Maps 초기화 함수
         function initMap() {
-            // 지도 초기 설정
+            //
             const map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: 37.5665, lng: 126.9780 }, // 서울의 좌표
                 zoom: 12,
                 mapTypeId: 'roadmap'
             });
 
-            // 줌 인/줌 아웃 이벤트 핸들링 (필요시 추가적인 로직)
+            //
             map.addListener('zoom_changed', function() {
                 console.log('현재 줌 레벨:', map.getZoom());
             });
